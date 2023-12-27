@@ -1,7 +1,7 @@
 
 var API = {
 
-  server:'https://react-blogging-app.onrender.com/api/blogs',
+  server:'https://blogging-api-8uoq.onrender.com/api/blogs',
 
   create: function (url,blog, successCB, errorCB ) {
     $.ajax({

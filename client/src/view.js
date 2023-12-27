@@ -37,7 +37,8 @@ class View {
     }
 
     //************************************ START FROM HERE  ************************************
-
+// shearch blogs
+  
     // dynamic rendering of the data
     renderBlogs(blogs) {
         this.$blogs.empty()

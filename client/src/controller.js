@@ -7,13 +7,28 @@ class Controller {
       this.view.handleShowForm();
     this.fetch();
     this.view.handleLogo()
-   this.view.handleSubmit(this.createBlog.bind(this))  }
- 
+    this.shearch()
+    
+   this.view.handleSubmit(this.createBlog.bind(this)) 
+  
+  }
+  shearch(){
+   
+    
+    let searchbtn = $('#searchButton')
+    searchbtn.on("click",()=>{
+      let search= $('#search').val();
+    this.model.filterBlogs(search)    
+    this.view.renderBlogs(this.model.filtered)
+    
+    })
+  }
   //a function to  get the  data from the api
   fetch() {
     API.readAll(
       API.server,
       (response) => {
+        console.log(response)
         this.model.addBlogs(response);
         this.view.renderBlogs(this.model.blogs);
       },
